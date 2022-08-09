@@ -1,0 +1,21 @@
+.detail {
+    display: flex;
+    flex-direction: row;
+    padding: 0;
+    margin: 0;
+    height: 100%;
+    width: 100%;
+}
+
+img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.info {
+    padding: 20px;
+    justify-content: space-between;
+    flex-basis: 49%;
+    position: relative;
+}

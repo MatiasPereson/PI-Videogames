@@ -1,0 +1,164 @@
+.box {
+    width: 800px;
+    padding: 20px;
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #211c1ce3;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+}
+
+form label {
+    color: white;
+}
+
+.box h1 {
+    color: white;
+    text-transform: uppercase;
+    font-weight: 500;
+}
+
+.box input[type='text'],
+input[type='date'],
+input[type='number'] {
+    border: 0;
+    background: none;
+    display: block;
+    margin: 20px auto;
+    text-align: center;
+    border: 2px solid #3498db;
+    padding: 14px 10px;
+    width: 200px;
+    outline: none;
+    color: white;
+    border-radius: 24px;
+    transition: 0.25s;
+
+}
+
+.box input[type='text']:focus,
+input[type='date']:focus,
+input[type='number']:focus {
+    width: 280px;
+    border-color: white;
+}
+
+.box input[type='text']:hover,
+input[type='date']:hover,
+input[type='number']:hover {
+    width: 280px;
+    border-color: white;
+    ;
+}
+
+.submit {
+    border: 0;
+    background: none;
+    display: block;
+    margin: 20px auto;
+    text-align: center;
+    border: 2px solid white;
+    padding: 14px 40px;
+    outline: none;
+    color: white;
+    border-radius: 24px;
+    transition: 0.25s;
+
+}
+
+.submit:hover:enabled {
+    width: 150px;
+    background: white;
+    cursor: pointer;
+}
+
+.submit:disabled {
+    background: red;
+    border: red;
+}
+
+.select {
+    text-align: center;
+    width: 200px;
+    padding: 8px 12px;
+    color: white;
+    background: #191919;
+    border: 2px solid #3498db;
+    border-radius: 24px;
+    transition: 0.25s;
+}
+
+.select option {
+    background: #191919;
+}
+
+.select:focus,
+.select:hover {
+    outline: none;
+    width: 280px;
+    border-color: white;
+    ;
+}
+
+.subBox {
+    display: flex;
+    padding: 20px;
+    margin: 20px;
+
+}
+
+.bg_img {
+    width: 100px;
+    position: relative;
+    border: solid #3498db;
+    border-radius: 20px;
+}
+
+.list {
+    width: 150px;
+    position: absolute;
+    border: solid #3498db;
+    border-radius: 20px;
+}
+
+.box ul {
+    list-style: none;
+}
+
+.box p {
+    color: rgb(161, 45, 45);
+
+}
+
+.errP {
+    color: rgb(161, 45, 45);
+}
+
+.gen {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: flex-start;
+    padding: 10px;
+    margin: 10px;
+    transform: translate(-15%);
+}
+
+.volverHome {
+    background-color: #c01212;
+    border: none;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    font-size: 1.5em;
+    margin: 4px 2px;
+    -webkit-transition-duration: 0.4s;
+    transition-duration: 0.4s;
+    cursor: pointer;
+}
+
+.volverHome:hover {
+    color: #bf4242;
+}

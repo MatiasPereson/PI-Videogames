@@ -1,0 +1,23 @@
+header {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    align-content: center;
+    padding: 10px;
+    background: #24252a;
+    height: 50px;
+    width: 100%;
+}
+
+.link {
+    text-decoration: none;
+    color: #edf0f1;
+    padding: 0px 20px;
+    transition: all 0.3s ease 0s;
+    font-size: 18px;
+    font-size: 1.5em
+}
+
+.link:hover {
+    color: #bf4242;
+}
