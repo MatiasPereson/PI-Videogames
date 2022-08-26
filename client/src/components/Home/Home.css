@@ -10,14 +10,16 @@
     text-align: center;
 }
 
-.filtros {
+.containerFiltrados {
     display: flex;
+    flex-direction: row;
     justify-content: flex-start;
     align-items: center;
     align-content: center;
     padding: 10px 4%;
     background: #24252a;
     width: 100%;
+    gap: 2%;
 }
 
 .filtros select {

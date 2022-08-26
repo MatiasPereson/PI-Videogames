@@ -1,5 +1,5 @@
 import axios from 'axios'
-
+import API_URL from '../config/enviroment'
 
 export const GET_ALL_VIDEOGAMES = 'GET_ALL_VIDEOGAMES'
 export const GET_VIDEOGAME_BY_ID = 'GET_VIDEOGAME_BY_ID'
@@ -18,38 +18,38 @@ export const CLEAN_FILTER = 'CLEAN_FILTER'
 
 
 export const getAllVideogames = () => dispatch => {
-    return fetch('http://localhost:3001/videogames')
+    return fetch(`${API_URL}/videogames`)
         .then(responsive => responsive.json())
         .then(videogames => dispatch({ type: GET_ALL_VIDEOGAMES, payload: videogames }))
 }
 
 export const getVideogameByID = (id) => dispatch => {
-    return fetch(`http://localhost:3001/videogame/${id}`)
+    return fetch(`${API_URL}/videogame/${id}`)
         .then(responsive => responsive.json())
         .then(videogame => dispatch({ type: GET_VIDEOGAME_BY_ID, payload: videogame }))
 };
 
 export const getVideogamesByName = (name) => dispatch => {
-    return fetch(`http://localhost:3001/videogames?name=${name}`)
+    return fetch(`${API_URL}/videogames?name=${name}`)
         .then(responsive => responsive.json())
         .then(videogames => dispatch({ type: GET_VIDEOGAMES_BY_NAME, payload: videogames }))
 };
 
 export const getGenres = () => dispatch => {
-    return fetch(`http://localhost:3001/genres`)
+    return fetch(`${API_URL}/genres`)
         .then(responsive => responsive.json())
         .then(genres => dispatch({ type: GET_GENRES, payload: genres }))
 };
 
 export const getPlatforms = () => dispatch => {
-    return fetch(`http://localhost:3001/platforms`)
+    return fetch(`${API_URL}/platforms`)
         .then(responsive => responsive.json())
         .then(platforms => dispatch({ type: GET_PLATFORMS, payload: platforms }))
 }
 
 export const createVideogame = (payload) => {
     return async function (dispatch) {
-        const json = await axios.post('http://localhost:3001/videogames', payload)
+        const json = await axios.post(`${API_URL}/videogames`, payload)
         return dispatch({
             type: CREATE_VIDEOGAME,
             payload: json.data

@@ -84,39 +84,41 @@ export default function Home() {
             {videogames && videogames !== "No se encontro ningun videojuego" ?
                 <div>
                     <NavBar></NavBar>
-                    <div className="filtros">
+                    <div className="containerFiltrados">
+                        <div className="ordenes">
+                            <select id="orderAZ" onChange={e => handleFilterByAZ(e)}>
+                                <option defaultValue="Orden alfabetico" value="default" selected="selected" hidden>-Seleccionar orden-</option>
+                                <option value='asc'>A-Z</option>
+                                <option value='desc'>Z-A</option>
+                            </select>
 
-                        <select id="orderAZ" onChange={e => handleFilterByAZ(e)}>
-                            <option defaultValue="Orden alfabetico" value="default" selected="selected" hidden>-Seleccionar orden-</option>
-                            <option value='asc'>A-Z</option>
-                            <option value='desc'>Z-A</option>
-                        </select>
+                            <select id="filtroRating" onChange={e => handleFilterByRating(e)}>
+                                <option defaultValue="Rating" value="default" selected="selected" hidden>-Seleccionar rating-</option>
+                                <option value='asc'>Ascendente</option>
+                                <option value='desc'>Descendente</option>
+                            </select>
+                        </div>
 
-                        <select id="ordenProcedencia" onChange={e => handleFilterByApiOrDb(e)}>
-                            <option defaultValue="Procedencia" value="default" selected="selected" hidden>-Seleccionar procedencia-</option>
-                            <option value='todos'>Todos</option>
-                            <option value='db'>DataBase</option>
-                            <option value='api'>API</option>
-                        </select>
+                        <div className="filtros">
+                            <select id="ordenProcedencia" onChange={e => handleFilterByApiOrDb(e)}>
+                                <option defaultValue="Procedencia" value="default" selected="selected" hidden>-Seleccionar procedencia-</option>
+                                <option value='todos'>Todos</option>
+                                <option value='db'>DataBase</option>
+                                <option value='api'>API</option>
+                            </select>
 
-                        <select id="filtroGeneros" onChange={e => handleFilterByGenres(e)}>
-                            <option defaultValue="Generos" value="default" selected="selected" hidden>-Seleccionar generos-</option>
-                            <option value='all'>Todos</option>
-                            {
-                                genres?.map(gen => {
-                                    return (
-                                        <option key={gen.id} value={gen.name}>{gen.name}</option>
-                                    )
-                                })
-                            }
-                        </select>
-
-                        <select id="filtroRating" onChange={e => handleFilterByRating(e)}>
-                            <option defaultValue="Rating" value="default" selected="selected" hidden>-Seleccionar rating-</option>
-                            <option value='asc'>Ascendente</option>
-                            <option value='desc'>Descendente</option>
-                        </select>
-
+                            <select id="filtroGeneros" onChange={e => handleFilterByGenres(e)}>
+                                <option defaultValue="Generos" value="default" selected="selected" hidden>-Seleccionar generos-</option>
+                                <option value='all'>Todos</option>
+                                {
+                                    genres?.map(gen => {
+                                        return (
+                                            <option key={gen.id} value={gen.name}>{gen.name}</option>
+                                        )
+                                    })
+                                }
+                            </select>
+                        </div>
                     </div>
                     <Paginado
                         videogamesXpagina={videogamesXpagina}
